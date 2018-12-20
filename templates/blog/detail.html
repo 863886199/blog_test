@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <article class="post post-{{ post.pk }}">
+        <header class="entry-header">
+            <h1 class="entry-title">{{ post.title }}</h1>
+            <div class="entry-meta">
+                <span class="post-category">
+
+                <span class="post-date"><a href="#"><time class="entry-date"
+                                                          datetime="{{ post.created_time }}">{{ post.created_time }}</time></a></span>
+                <span class="post-author"><a href="#">{{ post.author }}</a></span>
+                <span class="views-count"><a href="#">{{ post.views }} 阅读</a></span>
+            </div>
+        </header>
+        <div class="entry-content clearfix">
+            {{ post.boby|safe }}
+
+        </div>
+<!--<div></div>-->
+    </article>
+
+{% endblock main %}
